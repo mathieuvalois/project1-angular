@@ -21,6 +21,40 @@
 </head>
 
 <body>
+
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1173641119363130',
+      xfbml      : true,
+      version    : 'v2.8'
+    });
+    FB.AppEvents.logPageView();
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
+<script src="https://www.gstatic.com/firebasejs/3.7.6/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCO56UiaNkAk36WgwmGGIBBB5Cu4UBRL50",
+    authDomain: "analystprep-a2949.firebaseapp.com",
+    databaseURL: "https://analystprep-a2949.firebaseio.com",
+    projectId: "analystprep-a2949",
+    storageBucket: "analystprep-a2949.appspot.com",
+    messagingSenderId: "1043453855711"
+  };
+  firebase.initializeApp(config);
+</script>
+
 <app>
 </app>
 

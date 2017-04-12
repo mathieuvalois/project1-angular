@@ -4,6 +4,8 @@
     <a routerLink="/login" class="auth-link">Already have an ng2-admin account? Sign in!</a>
 
     <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)" class="form-horizontal">
+      
+      
       <div class="form-group row" [ngClass]="{'has-error': (!name.valid && name.touched), 'has-success': (name.valid && name.touched)}">
         <label for="inputName3" class="col-sm-2 control-label">Name</label>
 
@@ -11,6 +13,8 @@
           <input [formControl]="name" type="text" class="form-control" id="inputName3" placeholder="Full Name">
         </div>
       </div>
+
+
       <div class="form-group row" [ngClass]="{'has-error': (!email.valid && email.touched), 'has-success': (email.valid && email.touched)}">
         <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
 
@@ -18,6 +22,8 @@
           <input [formControl]="email" type="email" class="form-control" id="inputEmail3" placeholder="Email">
         </div>
       </div>
+
+
       <div class="form-group row" [ngClass]="{'has-error': (!password.valid && password.touched), 'has-success': (password.valid && password.touched)}">
         <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
 
@@ -25,6 +31,8 @@
           <input [formControl]="password" type="password" class="form-control" id="inputPassword3" placeholder="Password">
         </div>
       </div>
+
+
       <div class="form-group row" [ngClass]="{'has-error': (!repeatPassword.valid && repeatPassword.touched), 'has-success': (repeatPassword.valid && repeatPassword.touched)}">
         <label for="inputPassword4" class="col-sm-2 control-label">Repeat</label>
 
@@ -33,20 +41,333 @@
           <span *ngIf="!passwords.valid && (password.touched || repeatPassword.touched)" class="help-block sub-little-text">Passwords don't match.</span>
         </div>
       </div>
+
+      <div class="form-group row" [ngClass]="{'has-error': (!selectOption.valid && selectOption.touched), 'has-success': (selectOption.valid && selectOption.touched)}">
+        <label for="inputSelectExam" class="col-sm-2 control-label">Exam</label>
+
+        <div class="col-sm-10">
+        <select class="form-control" id="inputSelectExam" [formControl]="selectOption">
+          <option value="CFA1-DEC2017">CFA Level 1 - December 2017</option>
+          <option value="CFA1-JUNE2018">CFA Level 1 - June 2018</option>
+          <option value="FRM1-NOV2017">FRM Level 1 - November 2017</option>
+          <option value="FRM2-NOV2017">FRM Level 2 - November 2017</option>
+          <option value="FRM1-MAY2018">FRM Level 1 - May 2018</option>
+          <option value="FRM2-MAY2018">FRM Level 2 - May 2018</option>
+        </select>
+        </div>
+      </div>
+
+      <div class="form-group row" [ngClass]="{'has-error': (!selectLocation.valid && selectLocation.touched), 'has-success': (selectLocation.valid && selectLocation.touched)}">
+        <label for="inputSelectLocation" class="col-sm-2 control-label">Location</label>
+        <div class="col-sm-10">
+        <select class="form-control" id="inputSelectLocation" [formControl]="selectLocation">					
+          <option value="Tirana">Exam Location</option>
+          <optgroup label = "Argentina">
+          <option value="Buenos Aires">Buenos Aires</option>
+          <optgroup label = "Armenia">
+          <option value="Yerevan">Yerevan</option>
+          <optgroup label = "Australia">
+          <option value="Melbourne">Melbourne</option>
+          <option value="perth">Perth</option>
+          <option value="Sydney">Sydney</option>
+          <optgroup label = "Austria">
+          <option value="Vienna">Vienna</option>
+          <optgroup label = "Azerbaijan">
+          <option value="Baku">Baku</option>
+          <optgroup label = "Bahamas">
+          <option value="Nassau">Nassau</option>
+          <optgroup label = "Bahrain">
+          <option value="Manama">Manama</option>
+          <optgroup label = "Bangladesh">
+          <option value="Dhaka">Dhaka</option>
+          <optgroup label = "Barbados">
+          <option value="Barbados">Barbados</option>
+          <optgroup label = "Belgium">
+          <option value="Brussels">Brussels</option>
+          <optgroup label = "Bermuda">
+          <option value="Hamilton">Hamilton</option>
+          <optgroup label = "Brazil">
+          <option value="Sao Paulo">Sao Paulo</option>
+          <optgroup label = "Brunei Darussalam">
+          <option value="Brunei Darussalam">Brunei Darussalam</option>
+          <optgroup label = "Bulgaria">
+          <option value="Sofia">Sofia</option>
+          <optgroup label = "Canada">
+          <option value="Calgary">Calgary</option>
+          <option value="Edmonton">Edmonton</option>
+          <option value="Fredericton">Fredericton</option>
+          <option value="Halifax">Halifax</option>
+          <option value="Kelowna">Kelowna</option>
+          <option value="London (ON)">London (ON)</option>
+          <option value="Montreal">Montreal</option>
+          <option value="Ottawa">Ottawa</option>
+          <option value="Quebec">Quebec</option>
+          <option value="Regina">Regina</option>
+          <option value="St. Johns">St. Johns</option>
+          <option value="Toronto">Toronto</option>
+          <option value="Vancouver">Vancouver</option>
+          <option value="Victoria">Victoria</option>
+          <option value="Winnipeg">Winnipeg</option>
+          <optgroup label = "Cayman Islands">
+          <option value="Cayman Islands">Cayman Islands</option>
+          <optgroup label = "Chile">
+          <option value="Santiago">Santiago</option>
+          <optgroup label = "China">
+          <option value="Beijing">Beijing</option>
+          <option value="Chengdu">Chengdu</option>
+          <option value="Guangzhou">Guangzhou</option>
+          <option value="Nanjing">Nanjing</option>
+          <option value="Shanghai">Shanghai</option>
+          <option value="Shenzhen">Shenzhen</option>
+          <option value="Tianjin">Tianjin</option>
+          <option value="Wuhan">Wuhan</option>
+          <optgroup label = "Colombia">
+          <option value="Bogota">Bogota</option>
+          <optgroup label = "Croatia">
+          <option value="Zagreb">Zagreb</option>
+          <optgroup label = "Cyprus">
+          <option value="Nicosia">Nicosia</option>
+          <optgroup label = "Czech Republic">
+          <option value="Prague">Prague</option>
+          <optgroup label = "Denmark">
+          <option value="Copenhagen">Copenhagen</option>
+          <optgroup label = "Egypt">
+          <option value="Cairo">Cairo</option>
+          <optgroup label = "Finland">
+          <option value="Helsinki">Helsinki</option>
+          <optgroup label = "France">
+          <option value="Paris">Paris</option>
+          <optgroup label = "Germany">
+          <option value="Frankfurt">Frankfurt</option>
+          <option value="Munich">Munich</option>
+          <optgroup label = "Ghana">
+          <option value="Accra">Accra</option>
+          <optgroup label = "Greece">
+          <option value="Athens">Athens</option>
+          <optgroup label = "Guatemala">
+          <option value="Guatemala City">Guatemala City</option>
+          <optgroup label = "Hong Kong">
+          <option value="Hong Kong">Hong Kong</option>
+          <optgroup label = "Hungary">
+          <option value="Budapest">Budapest</option>
+          <optgroup label = "Iceland">
+          <option value="Reykjavik">Reykjavik</option>
+          <optgroup label = "India">
+          <option value="Athens">Ahmedabad</option>
+          <option value="Bangalore">Bangalore</option>
+          <option value="Chennai">Chennai</option>
+          <option value="Kolkata">Kolkata</option>
+          <option value="Mumbai">Mumbai</option>
+          <option value="New Delhi">New Delhi</option>
+          <option value="Pune">Pune</option>
+          <optgroup label = "Indonesia">
+          <option value="Jakarta">Jakarta</option>
+          <optgroup label = "Ireland">
+          <option value="Dublin">Dublin</option>
+          <optgroup label = "Israel">
+          <option value="Tel Aviv">Tel Aviv</option>
+          <optgroup label = "Italy">
+          <option value="Milan">Milan</option>
+          <optgroup label = "Jamaica">
+          <option value="Kingston">Kingston</option>
+          <optgroup label = "Japan">
+          <option value="Tokyo">Tokyo</option>
+          <optgroup label = "Jordan">
+          <option value="Amman">Amman</option>
+          <optgroup label = "Kazakhstan">
+          <option value="Almaty">Almaty</option>
+          <optgroup label = "Kenya">
+          <option value="Nairobi">Nairobi</option>
+          <optgroup label = "Korea">
+          <option value="Seoul">Seoul</option>
+          <optgroup label = "Kuwait">
+          <option value="Safat">Safat</option>
+          <optgroup label = "Latvia">
+          <option value="Riga">Riga</option>
+          <optgroup label = "Lebanon">
+          <option value="Beirut">Beirut</option>
+          <optgroup label = "Lithuania">
+          <option value="Vilnius">Vilnius</option>
+          <optgroup label = "Luxembourg">
+          <option value="Luxembourg">Luxembourg</option>
+          <optgroup label = "Macedonia">
+          <option value="Skopje">Skopje</option>
+          <optgroup label = "Malasia">
+          <option value="Kuala Lumpur">Kuala Lumpur</option>
+          <optgroup label = "Malta">
+          <option value="Malta">Malta</option>
+          <optgroup label = "Mauritius">
+          <option value="Port Louis">Port Louis</option>
+          <optgroup label = "Mexico">
+          <option value="Mexico City">Mexico City</option>
+          <optgroup label = "Morocco">
+          <option value="Casablanca">Casablanca</option>
+          <optgroup label = "Namibia">
+          <option value="Windhoek">Windhoek</option>
+          <optgroup label = "Nepal">
+          <option value="Kathmandu">Kathmandu</option>
+          <optgroup label = "Netherlands">
+          <option value="Amsterdam">Amsterdam</option>
+          <optgroup label = "New Zealand">
+          <option value="Auckland">Auckland</option>
+          <option value="Wellington">Wellington</option>
+          <optgroup label = "Norway">
+          <option value="Oslo">Oslo</option>
+          <optgroup label = "Oman">
+          <option value="Muscat">Muscat</option>
+          <optgroup label = "Pakistan">
+          <option value="Karachi">Karachi</option>
+          <option value="Lahore">Lahore</option>
+          <optgroup label = "Panama">
+          <option value="Panama City">Panama City</option>
+          <optgroup label = "Peru">
+          <option value="Lima">Lima</option>
+          <optgroup label = "Philippines">
+          <option value="Manila">Manila</option>
+          <optgroup label = "Poland">
+          <option value="Warsaw">Warsaw</option>
+          <optgroup label = "Portugal">
+          <option value="Lisbon">Lisbon</option>
+          <optgroup label = "Puerto Rico">
+          <option value="San Juan">San Juan</option>
+          <optgroup label = "Qatar">
+          <option value="Doha">Doha</option>
+          <optgroup label = "Romania">
+          <option value="Bucharest">Bucharest</option>
+          <optgroup label = "Russian Federation">
+          <option value="Moscow">Moscow</option>
+          <optgroup label = "Saudi Arabia">
+          <option value="Jeddah">Jeddah</option>
+          <option value="Riyadh">Riyadh</option>
+          <optgroup label = "Serbia">
+          <option value="Belgrade">Belgrade</option>
+          <optgroup label = "Singapore">
+          <option value="Singapore">Singapore</option>
+          <optgroup label = "South Africa">
+          <option value="Cape Town">Cape Town</option>
+          <option value="Johannesburg">Johannesburg</option>
+          <optgroup label = "Spain">
+          <option value="Bilbao">Bilbao</option>
+          <option value="Madrid">Madrid</option>
+          <optgroup label = "Sri Lanka">
+          <option value="Colombo">Colombo</option>
+          <optgroup label = "Sweden">
+          <option value="Stockholm">Stockholm</option>
+          <optgroup label = "Switzerland">
+          <option value="Geneva">Geneva</option>
+          <option value="Zurich">Zurich</option>
+          <optgroup label = "Taiwan">
+          <option value="Taipei">Taipei</option>
+          <optgroup label = "Thailand">
+          <option value="Bangkok">Bangkok</option>
+          <optgroup label = "Trinidad and Tobago">
+          <option value="Port of Spain">Port of Spain</option>
+          <optgroup label = "Tunisia">
+          <option value="Tunis">Tunis</option>
+          <optgroup label = "Ukraine">
+          <option value="Kiev">Kiev</option>
+          <optgroup label = "United Arab Emirates">
+          <option value="Abu Dhabi">Abu Dhabi</option>
+          <option value="Dubai">Dubai</option>
+          <optgroup label = "United Kingdom">
+          <option value="Edinburgh">Edinburgh</option>
+          <option value="London">London</option>
+          <optgroup label = "USA">
+          <option value="Anchorage, AK">Anchorage, AK</option>
+          <option value="Juneau, AK">Juneau, AK</option>
+          <option value="Birmingham, AL">Birmingham, AL</option>
+          <option value="Little Rock, AR">Little Rock, AR</option>
+          <option value="Phoenix, AZ">Phoenix, AZ</option>
+          <option value="Los Angeles, CA">Los Angeles, CA</option>
+          <option value="Sacramento, CA">Sacramento, CA</option>
+          <option value="San Diego, CA">San Diego, CA</option>
+          <option value="San Francisco, CA">San Francisco, CA</option>
+          <option value="San Jose, CA">San Jose, CA</option>
+          <option value="Denver, CO">Denver, CO</option>
+          <option value="Hartford, CT">Hartford, CT</option>
+          <option value="Washington, DC">Washington, DC</option>
+          <option value="Wilmington, DE">Wilmington, DE</option>
+          <option value="Jacksonville, FL">Jacksonville, FL</option>
+          <option value="Miami, FL">Miami, FL</option>
+          <option value="Naples, FL">Naples, FL</option>
+          <option value="Tampa, FL">Tampa, FL</option>
+          <option value="Atlanta, GA">Atlanta, GA</option>
+          <option value="Honolulu, HI">Honolulu, HI</option>
+          <option value="Des Moines, IA">Des Moines, IA</option>
+          <option value="Boise, ID">Boise, ID</option>
+          <option value="Chicago, IL">Chicago, IL</option>
+          <option value="Indianapolis, IN">Indianapolis, IN</option>
+          <option value="Louisville, KY">Louisville, KY</option>
+          <option value="New Orleans, LA">New Orleans, LA</option>
+          <option value="Boston, MA">Boston, MA</option>
+          <option value="Baltimore, MD">Baltimore, MD</option>
+          <option value="Portland, ME">Portland, ME</option>
+          <option value="Detroit, MI">Detroit, MI</option>
+          <option value="Grand Rapids, MI">Grand Rapids, MI</option>
+          <option value="Minneapolis, MN">Minneapolis, MN</option>
+          <option value="Kansas City, MO">Kansas City, MO</option>
+          <option value="St Louis, MO">St Louis, MO</option>
+          <option value="Jackson, MS">Jackson, MS</option>
+          <option value="Helena, MT">Helena, MT</option>
+          <option value="Charlotte, NC">Charlotte, NC</option>
+          <option value="Omaha, NE">Omaha, NE</option>
+          <option value="Northern New Jersey, NJ">Northern New Jersey, NJ</option>
+          <option value="Albuquerque, NM">Albuquerque, NM</option>
+          <option value="Las Vegas, NV">Las Vegas, NV</option>
+          <option value="Buffalo, NY">Buffalo, NY</option>
+          <option value="Long Island, NY">Long Island, NY</option>
+          <option value="Rochester, NY">Rochester, NY</option>
+          <option value="Westchester County, NY">Westchester County, NY</option>
+          <option value="Cincinnati, OH">Cincinnati, OH</option>
+          <option value="Cleveland, OH">Cleveland, OH</option>
+          <option value="Columbus, OH">Columbus, OH</option>
+          <option value="Portland, OR">Portland, OR</option>
+          <option value="Philadelphia, PA">Philadelphia, PA</option>
+          <option value="Pittsburgh, PA">Pittsburgh, PA</option>
+          <option value="Providence, RI">Providence, RI</option>
+          <option value="Columbia, SC">Columbia, SC</option>
+          <option value="Chattanooga, TN">Chattanooga, TN</option>
+          <option value="Memphis, TN">Memphis, TN</option>
+          <option value="Nashville, TN">Nashville, TN</option>
+          <option value="Austin, TX">Austin, TX</option>
+          <option value="Dallas, TX">Dallas, TX</option>
+          <option value="Houston, TX">Houston, TX</option>
+          <option value="San Antonio, TX">San Antonio, TX</option>
+          <option value="Salt Lake City, UT">Salt Lake City, UT</option>
+          <option value="Richmond, VA">Richmond, VA</option>
+          <option value="Montpelier, VT">Montpelier, VT</option>
+          <option value="Seattle, WA">Seattle, WA</option>
+          <option value="Spokane, WA">Spokane, WA</option>
+          <option value="Madison, WI">Madison, WI</option>
+          <option value="Milwaukee, WI">Milwaukee, WI</option>
+          <optgroup label = "Venezuela">
+          <option value="Caracas">Caracas</option>
+          <optgroup label = "Viet Nam">
+          <option value="Hanoi">Hanoi</option>
+          <option value="Ho Chi Minh City">Ho Chi Minh City</option>
+          <optgroup label = "Zimbabwe">
+          <option value="Harare">Harare</option>
+        </select>
+       </div>
+      </div>
+
+
+
       <div class="form-group row">
         <div class="offset-sm-2 col-sm-10">
           <button [disabled]="!form.valid" type="submit" class="btn btn-default btn-auth">Sign up</button>
         </div>
       </div>
+
     </form>
 
     <div class="auth-sep"><span><span>or Sign up with one click</span></span></div>
 
     <div class="al-share-auth">
       <ul class="al-share clearfix">
-        <li><i class="socicon socicon-facebook" title="Share on Facebook"></i></li>
-        <li><i class="socicon socicon-twitter" title="Share on Twitter"></i></li>
-        <li><i class="socicon socicon-google" title="Share on Google Plus"></i></li>
+        <li><i class="socicon socicon-facebook" title="Signup with Facebook"></i></li>
+        <li><i class="socicon socicon-twitter" title="Signup with Twitter"></i></li>
+        <li><i class="socicon socicon-google" title="Signup with Google Plus"></i></li>
       </ul>
     </div>
   </div>
