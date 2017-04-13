@@ -21,6 +21,17 @@ import { PagesModule } from './pages/pages.module';
 
 //Custom Services
 import { AuthService } from './theme/services/auth/auth.service';
+import { AuthSQLService } from './theme/services/authSQL/authSQL.service';
+
+import { AngularFireModule } from 'angularfire2';
+
+export const firebaseConfig = {
+  apiKey: "AIzaSyCO56UiaNkAk36WgwmGGIBBB5Cu4UBRL50",
+  authDomain: "analystprep-a2949.firebaseapp.com",
+  databaseURL: "https://analystprep-a2949.firebaseio.com",
+  storageBucket: "analystprep-a2949.appspot.com",
+  messagingSenderId: "1043453855711"
+};
 
 // Application wide providers
 const APP_PROVIDERS = [
@@ -51,12 +62,14 @@ export type StoreType = {
     NgaModule.forRoot(),
     NgbModule.forRoot(),
     PagesModule,
-    routing
+    routing,
+    AngularFireModule.initializeApp(firebaseConfig)
   ],
   providers: [ // expose our Services and Providers into Angular's dependency injection
     ENV_PROVIDERS,
     APP_PROVIDERS,
-    AuthService
+    AuthService,
+    AuthSQLService
   ]
 })
 
